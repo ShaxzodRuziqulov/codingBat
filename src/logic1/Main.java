@@ -56,24 +56,18 @@ public class Main {
         }
     }
     public String alarmClock(int day, boolean vacation) {
-        if (!vacation){
-            if (day==1){
-                return "7:00";
-            } else if (day==2) {
-                return "7:00";
-            } else if (day==3) {
-                return "7:00";
-            } else if (day==4) {
-                return "7:00";
-            }else if (day==5){
-                return "7:00";
-            }else if (day==6){
-                return "10:00";
-            }else {
+        if (vacation){
+            if (day==0 || day==6){
                 return "off";
+            }else {
+                return "10:00";
             }
         }else {
-            return "off";
+            if (day==0 || day==6){
+                return "10:00";
+            }else {
+                return "7:00";
+            }
         }
     }
 
